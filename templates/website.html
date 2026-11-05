@@ -1,0 +1,140 @@
+<div
+    class="layout_full block marktbericht"
+    itemscope=""
+    itemtype="http://schema.org/Article"
+>
+    <div class="button-box ce_rsce_oneo_button-left">
+        <a
+            class="button ce_rsce_oneo_button-left"
+            href="unternehmen/marktbericht-abonnieren.html"
+            >Marktbericht abonnieren
+    	</a>
+    </div>
+
+    <h1 itemprop="name">Marktbericht vom {{ full_date }}</h1>
+
+    <div
+        class="centered-wrapper ce_rsce_oneo_centered_wrapper_start"
+        style="background-size: contain"
+    >
+        <div class="centered-wrapper-inner">
+            <div class="headline-box ce_rsce_oneo_headline_box">
+                <h1 class=" ">Marktbericht vom {{ full_date }}</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-text">
+        <h1>Marktbericht vom {{ full_date }}</h1>
+
+        <div class="rte">
+            {% if farm_text %}
+            <p><strong>Aus unserem FARM-Netzwerk</strong> {{ farm_text }}</p>
+            {% endif %}
+            {% if aktuelles_markt %}
+            <p>
+                <strong>Aktuelles auf dem Markt</strong> {{ aktuelles_markt }}
+            </p>
+            {% endif %}
+            {% if problematisches %}
+            <p>
+                <strong>Problematisch oder Saisonende</strong> {{
+                problematisches }}
+            </p>
+            {% endif %}
+        </div>
+    </div>
+
+		<div class="rs-columns ce_rs_columns_start">
+			<div class="rs-column -large-col-3-1 -large-first -large-first-row -medium-col-2-1 -medium-first -medium-first-row -small-col-1-1 -small-first -small-last -small-first-row">
+        		<div class="content-image">            
+                	<figure>
+				<img src={{img[0]}} alt="Cimone farbig" title="Wie kannst du dein Restaurant retten? La Résistance hilft dir dabei." width="2016" height="1512">
+                        	<figcaption>Cimone farbig</figcaption>
+                	</figure>
+            	</div>
+			</div>
+			<div class="rs-column -large-col-3-2 -large-last -large-first-row -medium-col-2-1 -medium-last -medium-first-row -small-col-1-1 -small-first -small-last">
+        			<div class="content-text">            
+                			<div class="rte">
+						{% for title, body in items[0] %}
+							<h3><strong>{{title}}</strong></h3>
+							<p>{{body}}</p>
+						{% endfor %}
+        				</div>
+    				</div>
+			</div>
+		</div>
+        <div class="content-text">
+		<div class="rte">
+			{% for title, body in items[1] %}
+				<h3><strong>{{title}}</strong></h3>
+				<p>{{body}}</p>
+			{% endfor %}
+        	</div>
+	</div>
+	<div class="rs-columns ce_rs_columns_start">
+			<div class="rs-column -large-col-3-2 -large-first -large-first-row -medium-col-2-1 -medium-first -medium-first-row -small-col-1-1 -small-first -small-last -small-first-row">
+        		<div class="content-text">            
+                	<div class="rte">
+
+				{% for title, body in items[2] %}
+					<h3><strong>{{title}}</strong></h3>
+					<p>{{body}}</p>
+				{% endfor %}
+        		</div>
+			</div>
+			</div>
+			<div class="rs-column -large-col-3-1 -large-last -large-first-row -medium-col-2-1 -medium-last -medium-first-row -small-col-1-1 -small-first -small-last">
+        		<div class="content-image">            
+            		<figure>
+				<img src={{img[1]}} alt="Puntarelle in der Schale" title="Dani vom Enikerhof aus unserem FARM-Netzwerk" width="374" height="374">
+                    	<figcaption>Puntarelle in der Schale</figcaption>
+                	</figure>
+            	</div>
+			</div>
+	</div>
+        <div class="content-text">            
+        	<div class="rte">
+			{% for title, body in items[3] %}
+				<h3><strong>{{title}}</strong></h3>
+				<p>{{body}}</p>
+			{% endfor %}
+        	</div>
+		</div>
+		<div class="rs-columns ce_rs_columns_start">
+			<div class="rs-column -large-col-3-1 -large-first -large-first-row -medium-col-2-1 -medium-first -medium-first-row -small-col-1-1 -small-first -small-last -small-first-row">
+        		<div class="content-image">            
+                	<figure>
+				<img src={{img[2]}} width="374" height="374">
+                            <figcaption>Freedom Grapefruit mit Blatt</figcaption>
+                    </figure>
+				</div>
+			</div>
+			<div class="rs-column -large-col-3-2 -large-last -large-first-row -medium-col-2-1 -medium-last -medium-first-row -small-col-1-1 -small-first -small-last">
+        		<div class="content-text">            
+                	<div class="rte">
+				{% for title, body in items[4] %}
+					<h3><strong>{{title}}</strong></h3>
+					<p>{{body}}</p>
+				{% endfor %}
+						<p>&nbsp;</p>
+        			</div>
+            	</div>
+			</div>
+		</div>
+
+    <div class="download-box content-downloads">
+        <h2>Download</h2>
+
+        <ul>
+            <li class="download-element ext-pdf">
+                <a
+                    href="https://www.marinello.ch/marktberichte-auswahl/marktbericht-vom-24-september-2025.html?_hash=kpBs4ACI3UJCZYTdwi40iwWdWeUco2tYfxGCcfoQF40%3D&amp;ctx=a%3A1%3A%7Bs%3A2%3A%22id%22%3Bi%3A138020%3B%7D&amp;d=attachment&amp;f=marinello_marktbericht_2025_09_24.pdf&amp;p=oneo%2Fimg%2Fmarktbericht+2025%2F2025_09_24%2Fmarinello_marktbericht_2025_09_24.pdf"
+                    type="application/pdf"
+                    >marinello_marktbericht_2025_09_24.pdf</a
+                >
+            </li>
+        </ul>
+    </div>
+</div>
