@@ -11,6 +11,7 @@ import sys
 import zipfile
 
 import mammoth
+from markupsafe import Markup
 
 from create_page import OUTPUT_DIR, iso_date, split_intro, split_items, template
 
@@ -31,10 +32,12 @@ def extract_date(docx):
 
 def extract_pairs(text):
     # A pair is a paragraph that starts with bold text. The rest of the
-    # paragraph is the body, with its inline markup (links, bold words) removed.
+    # paragraph is the body. Links are kept as they are, any other inline
+    # markup (bold words) is removed. mammoth already escapes the text, so the
+    # body is passed to Jinja as Markup to keep the links from being escaped.
     pairs = re.findall(r"<p>[^/]*?<strong>(.*?)</strong>(.*?)</p>", text)
     return [(html.unescape(title).strip(),
-             html.unescape(re.sub(r"<[^>]+>", "", body)).strip())
+             Markup(re.sub(r"<(?!/?a\b)[^>]+>", "", body).strip()))
             for title, body in pairs]
 
 
